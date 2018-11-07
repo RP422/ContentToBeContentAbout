@@ -1,3 +1,20 @@
+<?php
+session_start();
+$user = $_SESSION['user'];
+if($user == null){
+    header("Location: http://localhost:8080/ContentToBeContentAbout/login.php");
+die();
+}
+else{
+   
+    echo $user."<br/>";
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_unset(); 
+    session_destroy();
+     header("Location: http://localhost:8080/ContentToBeContentAbout/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,5 +46,12 @@
             written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first 
             line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
         </p>
+        <form action="index.php" method="post">
+
+           <input type="submit" value="Logout">
+
+        </form>
+      
     </body>
+
 </html>
