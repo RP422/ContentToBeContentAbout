@@ -8,17 +8,18 @@
     $theme_query = 'select css_filename from css_themes join users on css_themes.id = users.theme where  users.id = '.$user_id;
     $result = $mysqli->query( $theme_query );
 
+    $theme = ""; // Replace this with some default file later
+
     // Pull the css file from the results
     if($row = $result->fetch_assoc()){
         extract($row);
         $theme = $css_filename;
     }
     else {
-        // Add some kind of warning
-        // Use the default theme
+        // Throw some kind of warning maybe?
     }
 
-    // Echo the proper theme
+    echo '<link rel="stylesheet" type="text/css" href="'.$theme.'">';
 
     //disconnect from database
     $result->free();
