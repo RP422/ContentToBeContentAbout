@@ -23,10 +23,15 @@
         while( $subpage = $subpages_result->fetch_assoc() ){
             extract($subpage);
             
-            echo '<li><a href="/'.$subpage_title.'>'.$subpage_title.'</a></li>';
+            echo '<li><a href="/view?title='.$subpage_title.'>'.$subpage_title.'</a></li>';
         }
+
+        $subpages_result->free();
         echo '</ul></li>';
     }
     echo '</ul>';
     echo '</nav>';
+
+    $categories_result->free();
+    $mysqli->close();
 ?>
