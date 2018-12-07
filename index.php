@@ -2,7 +2,7 @@
 session_start();
 $user = $_SESSION['user'];
 if($user == null){
-    header("Location: http://localhost:8080/ContentToBeContentAbout/login.php");
+    header("Location: /ContentToBeContentAbout/login.php");
 die();
 }
 else{
@@ -12,7 +12,7 @@ else{
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_unset(); 
     session_destroy();
-     header("Location: http://localhost:8080/ContentToBeContentAbout/login.php");
+     header("Location: /ContentToBeContentAbout/login.php");
 }
 ?>
 <!DOCTYPE html>

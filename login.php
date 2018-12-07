@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwordErr = "Password is required";
       } else {
         $password = test_input($_POST["password"]);
-        Redirect('http://localhost:8080/ContentToBeContentAbout/index.php', false);
+        Redirect('/ContentToBeContentAbout/index.php', false);
       }
      
 }
@@ -59,7 +59,7 @@ function test_input($data) {
   
   <br><br>
   <input type="submit" name="submit" value="Log In">
-  <a href="http://localhost:8080/ContentToBeContentAbout/create.php">Create Account</a>
+  <a href="/ContentToBeContentAbout/create.php">Create Account</a>
 </form>
 
 

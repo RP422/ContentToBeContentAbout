@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+
     <?php 
     //include database connection
     include 'dbconfig.php';
